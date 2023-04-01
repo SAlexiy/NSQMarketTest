@@ -6,12 +6,17 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.ui.Modifier
+import com.salexey.nsqmarkettest.ktor.Downloader
 import com.salexey.nsqmarkettest.ui.screens.scafold.ScaffoldScreen
 import com.salexey.nsqmarkettest.ui.theme.NSQMarketTestTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val downloader = Downloader(this)
+        downloader.downloadFile("https://testtasks.nutgeek.fun/a/")
+
         setContent {
             NSQMarketTestTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
@@ -21,6 +26,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 
 
 
