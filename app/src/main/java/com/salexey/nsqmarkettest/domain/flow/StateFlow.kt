@@ -1,4 +1,4 @@
-package com.salexey.nsqmarkettest.features.flow
+package com.salexey.nsqmarkettest.domain.flow
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

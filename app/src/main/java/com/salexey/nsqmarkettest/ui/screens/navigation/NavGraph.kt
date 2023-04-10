@@ -10,7 +10,7 @@ import com.salexey.nsqmarkettest.ui.screens.wallpaperscreen.WallPaperScreen
 import com.salexey.nsqmarkettest.ui.screens.webscreen.WebScreen
 
 @Composable
-fun NavGraph(navController: NavHostController = rememberNavController(),) {
+fun NavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
         route = Graph.ROOT,
