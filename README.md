@@ -2,7 +2,7 @@
 
 Lang: Kotlin
 
-DI: Kodein
+DI: ~~Kodein~~ Koin
 
 UI: Compose
 
