@@ -83,9 +83,7 @@ dependencies {
     implementation("commons-io:commons-io:2.11.0")
 
     //di
-    implementation("org.kodein.di:kodein-di-framework-android-x:7.20.0")
-    implementation("org.kodein.di:kodein-di-framework-compose-android:7.20.0")
-    implementation("org.kodein.di:kodein-di-framework-android-x-viewmodel-savedstate:7.20.0")
+    implementation "io.insert-koin:koin-androidx-compose:3.4.3"
 
 
     //ktor

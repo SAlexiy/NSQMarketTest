@@ -1,19 +1,28 @@
 package com.salexey.nsqmarkettest
 
 import android.app.Application
-import org.kodein.di.DI
-import org.kodein.di.DIAware
+import com.salexey.nsqmarkettest.di.appModule
+import com.salexey.nsqmarkettest.di.ktorModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
-class MainApplication() : Application(), DIAware{
+class MainApplication() : Application() {
 
-    override val di by DI.lazy {
-        /* bindings */
-    }
 
 
     override fun onCreate() {
         super.onCreate()
 
+        startKoin {
+            // Log Koin into Android logger
+            androidLogger()
+            // Reference Android context
+            androidContext(this@MainApplication)
+            // Load modules
+            modules(appModule, ktorModule)
+        }
     }
+
 
 }

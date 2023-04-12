@@ -14,4 +14,10 @@ class StateFlow<T>(value: T) {
     fun getValue(): T {
         return value.value
     }
+
+    suspend fun a(): Unit {
+        value.collect {
+            println("")
+        }
+    }
 }

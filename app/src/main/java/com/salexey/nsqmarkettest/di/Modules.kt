@@ -4,14 +4,22 @@ import com.salexey.nsqmarkettest.domain.stt.STT
 import com.salexey.nsqmarkettest.network.ktor.Ktor
 import com.salexey.nsqmarkettest.network.repositories.STTRepository
 import com.salexey.nsqmarkettest.ui.screens.splashscreen.SplashViewModel
-import io.ktor.util.reflect.*
-import org.kodein.di.*
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
-val di = DI {
 
-    bindSingleton<Ktor> { Ktor() }
-    bindSingleton<STTRepository> { STTRepository(instance()) }
-    bindProvider<STT> { STT(instance()) }
+val appModule = module {
+    single { Ktor() }
+    single { STTRepository(get()) }
+    single { STT(get()) }
 
-    bindSingleton<SplashViewModel> { SplashViewModel( instance())}
+    viewModel { SplashViewModel.getInstance(get()) }
+
+}
+
+val ktorModule = module {
+    single { Ktor() }
+    single { STTRepository(get()) }
+    single { STT(get()) }
+
 }

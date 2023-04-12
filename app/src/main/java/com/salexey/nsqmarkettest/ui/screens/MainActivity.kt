@@ -9,13 +9,10 @@ import androidx.compose.ui.Modifier
 import com.salexey.nsqmarkettest.ui.screens.scafold.ScaffoldScreen
 import com.salexey.nsqmarkettest.ui.screens.splashscreen.SplashViewModel
 import com.salexey.nsqmarkettest.ui.theme.NSQMarketTestTheme
-import org.kodein.di.DI
-import org.kodein.di.DIAware
-import org.kodein.di.android.closestDI
 
-class MainActivity : ComponentActivity(), DIAware {
 
-    override val di: DI by closestDI()
+class MainActivity : ComponentActivity(){
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
